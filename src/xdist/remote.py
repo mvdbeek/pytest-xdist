@@ -238,6 +238,7 @@ if __name__ == "__channelexec__":
 
     os.environ["PYTEST_XDIST_WORKER"] = workerinput["workerid"]
     os.environ["PYTEST_XDIST_WORKER_COUNT"] = str(workerinput["workercount"])
+    os.environ['PATH'] = '/galaxy_venv/lib/node_modules/.bin:/galaxy_venv/bin:/galaxy_venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
     config = remote_initconfig(option_dict, args)
     config._parser.prog = os.path.basename(workerinput["mainargv"][0])
